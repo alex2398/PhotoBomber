@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PhotoCell.h
 //  Photo Bombers
 //
 //  Created by Alex Valladares on 19/08/15.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PhotoCell : UICollectionViewCell
 
+@property (nonatomic) UIImageView *imageView;
 
 @end
-

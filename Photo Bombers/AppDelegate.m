@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PhotosViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Creamos la ventana principal programáticamente
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Creamos el viewController
+    PhotosViewController *photosViewController = [[PhotosViewController alloc]init];
+    
+    // Creamos el navigationController para el photosViewController
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:photosViewController];
+    
+    // Customizamos el navigationBar
+    UINavigationBar *navigationBar = navigationController.navigationBar;
+    navigationBar.barTintColor= [UIColor colorWithRed:242.0/255.0 green:122.0/255.0 blue:87.0/255.0 alpha:1.0];
+    navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    
+    // Establecemos el navigationController en el window
+    [window setRootViewController:navigationController];
+    [window makeKeyAndVisible];
+    
+    
+    [self setWindow:window];
+    
     return YES;
 }
 

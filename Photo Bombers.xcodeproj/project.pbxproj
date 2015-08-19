@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		BDFBDEDE1B849AD20048703B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEDD1B849AD20048703B /* main.m */; };
 		BDFBDEE11B849AD20048703B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEE01B849AD20048703B /* AppDelegate.m */; };
-		BDFBDEE41B849AD20048703B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEE31B849AD20048703B /* ViewController.m */; };
-		BDFBDEE71B849AD20048703B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFBDEE51B849AD20048703B /* Main.storyboard */; };
 		BDFBDEE91B849AD20048703B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFBDEE81B849AD20048703B /* Images.xcassets */; };
-		BDFBDEEC1B849AD20048703B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFBDEEA1B849AD20048703B /* LaunchScreen.xib */; };
 		BDFBDEF81B849AD20048703B /* Photo_BombersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEF71B849AD20048703B /* Photo_BombersTests.m */; };
+		BDFBDF071B849B970048703B /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDF061B849B970048703B /* PhotosViewController.m */; };
+		BDFBDF0A1B84AA490048703B /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDF091B84AA490048703B /* PhotoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +31,14 @@
 		BDFBDEDD1B849AD20048703B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BDFBDEDF1B849AD20048703B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BDFBDEE01B849AD20048703B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BDFBDEE21B849AD20048703B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BDFBDEE31B849AD20048703B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BDFBDEE61B849AD20048703B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDFBDEE81B849AD20048703B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BDFBDEEB1B849AD20048703B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BDFBDEF11B849AD20048703B /* Photo BombersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo BombersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFBDEF61B849AD20048703B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDFBDEF71B849AD20048703B /* Photo_BombersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo_BombersTests.m; sourceTree = "<group>"; };
+		BDFBDF051B849B970048703B /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		BDFBDF061B849B970048703B /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		BDFBDF081B84AA490048703B /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		BDFBDF091B84AA490048703B /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +82,11 @@
 			children = (
 				BDFBDEDF1B849AD20048703B /* AppDelegate.h */,
 				BDFBDEE01B849AD20048703B /* AppDelegate.m */,
-				BDFBDEE21B849AD20048703B /* ViewController.h */,
-				BDFBDEE31B849AD20048703B /* ViewController.m */,
-				BDFBDEE51B849AD20048703B /* Main.storyboard */,
+				BDFBDF051B849B970048703B /* PhotosViewController.h */,
+				BDFBDF061B849B970048703B /* PhotosViewController.m */,
+				BDFBDF081B84AA490048703B /* PhotoCell.h */,
+				BDFBDF091B84AA490048703B /* PhotoCell.m */,
 				BDFBDEE81B849AD20048703B /* Images.xcassets */,
-				BDFBDEEA1B849AD20048703B /* LaunchScreen.xib */,
 				BDFBDEDB1B849AD20048703B /* Supporting Files */,
 			);
 			path = "Photo Bombers";
@@ -199,8 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFBDEE71B849AD20048703B /* Main.storyboard in Resources */,
-				BDFBDEEC1B849AD20048703B /* LaunchScreen.xib in Resources */,
 				BDFBDEE91B849AD20048703B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFBDEE41B849AD20048703B /* ViewController.m in Sources */,
+				BDFBDF0A1B84AA490048703B /* PhotoCell.m in Sources */,
 				BDFBDEE11B849AD20048703B /* AppDelegate.m in Sources */,
+				BDFBDF071B849B970048703B /* PhotosViewController.m in Sources */,
 				BDFBDEDE1B849AD20048703B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,25 +240,6 @@
 			targetProxy = BDFBDEF21B849AD20048703B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BDFBDEE51B849AD20048703B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BDFBDEE61B849AD20048703B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BDFBDEEA1B849AD20048703B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BDFBDEEB1B849AD20048703B /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BDFBDEF91B849AD20048703B /* Debug */ = {
