@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		02CBC461499BE474FA3B53F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		BD594E181B87107B00F9AC91 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = "Photo Bombers/Podfile"; sourceTree = "<group>"; };
 		BDFBDED81B849AD20048703B /* Photo Bombers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Bombers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFBDEDC1B849AD20048703B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDFBDEDD1B849AD20048703B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 		BDFBDECF1B849AD20048703B = {
 			isa = PBXGroup;
 			children = (
-				BD594E181B87107B00F9AC91 /* Podfile */,
 				BDFBDEDA1B849AD20048703B /* Photo Bombers */,
 				BDFBDEF41B849AD20048703B /* Photo BombersTests */,
 				BDFBDED91B849AD20048703B /* Products */,

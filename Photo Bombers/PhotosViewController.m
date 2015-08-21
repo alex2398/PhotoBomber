@@ -13,6 +13,7 @@
 @interface PhotosViewController ()
 
 @property (strong, nonatomic) NSString *accessToken;
+@property (strong, nonatomic) NSArray *photos;
 
 @end
 
@@ -35,6 +36,7 @@
     self = [super initWithCollectionViewLayout:layout];
     return self;
 }
+
 - (void) viewDidLoad {
     [super viewDidLoad];
     
@@ -81,33 +83,47 @@
             [userDefaults synchronize];
         }];
     } else {
-        NSLog(@"Signed in!");
-        NSURLSession *session = [NSURLSession sharedSession];
-        NSString *urlString = [[NSString alloc]initWithFormat:@"https://api.instagram.com/v1/tags/cats/media/recent?access_token=%@",self.accessToken];
-        NSURL *url = [[NSURL alloc]initWithString:urlString];
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-        
-        NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-            NSString *text = [[NSString alloc]initWithContentsOfURL:location encoding:NSUTF8StringEncoding error:nil];
-            NSLog(@"Results : %@", text);
-        }];
-        [task resume];
-        
-}
-    
-    
+        [self refresh];
+    }
 }
 
 // Retornamos 10 items
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.photos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photo" forIndexPath:indexPath];
+    PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photo" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor lightGrayColor];
+    // Obtenemos la foto guardada del json y la asignamos a la celda actual, esto para cada celda de la colección
+    cell.photo = [self.photos objectAtIndex:indexPath.row];
     return cell;
 }
+
+- (void)refresh {
+    NSLog(@"Signed in!");
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSString *urlString = [[NSString alloc]initWithFormat:@"https://api.instagram.com/v1/tags/photobomber/media/recent?access_token=%@",self.accessToken];
+    NSURL *url = [[NSURL alloc]initWithString:urlString];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *data = [[NSData alloc]initWithContentsOfURL:location];
+        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        // Sacamos el campo que nos interesa del JSON en un array
+        // Para acceder a los subcampos del json lo hacemos con valueForKeyPath
+        
+        self.photos = [responseDictionary valueForKeyPath:@"data"];
+        // Cuando se llama SessionDownloadTask, se hace en background, por lo que volvemos a la hebra principal
+        // para actualizar el collectionView
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+        
+    }];
+    [task resume];
+}
+
 
 @end

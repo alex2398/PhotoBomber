@@ -7,6 +7,7 @@
 //
 
 #import "PhotoCell.h"
+#import <SAMCache/SAMCache.h>
 
 
 @implementation PhotoCell
@@ -24,6 +25,14 @@
     
     return self;
 }
+// Sobreescribimos el setter de la propiedad photo
+-(void) setPhoto:(NSDictionary *)photo {
+    _photo = photo;
+    
+    NSURL *url = [[NSURL alloc]initWithString:photo[@"images"][@"thumbnail"][@"url"]];
+    [self downloadPhotoWithURL:url];
+    
+}
 
 - (void) layoutSubviews {
     [super layoutSubviews];
@@ -32,5 +41,31 @@
     self.imageView.frame = self.contentView.bounds;
     
 }
+
+- (void) downloadPhotoWithURL:(NSURL*)url {
+    // Para almacenar imagenes en la cache usamos 3rd party SAMCache
+    // Para almacenar en cache, obtenemos un identificado, en este caso la key de la foto con la cadena thumbnail despues
+    NSString *key = [[NSString alloc]initWithFormat:@"%@-thumbnail",self.photo[@"id"]];
+    // Comprobamos si la key está ya en la caché, si es así la usamos y salimos
+    UIImage *photo = [[SAMCache sharedCache]imageForKey:key];
+    if (photo) {
+        self.imageView.image = photo;
+        return;
+    }
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *data = [[NSData alloc]initWithContentsOfURL:location];
+        UIImage *image = [UIImage imageWithData:data];
+        // Después de bajarla la guardamos en la caché
+        [[SAMCache sharedCache]setImage:image forKey:key];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+        });
+    }];
+    [task resume];
+}
+
 
 @end
