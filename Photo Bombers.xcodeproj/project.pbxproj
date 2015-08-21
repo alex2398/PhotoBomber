@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABB2AB6E6DC6542D0F3F323E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D0B1C10D168045A9451C4B /* libPods.a */; };
 		BDFBDEDE1B849AD20048703B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEDD1B849AD20048703B /* main.m */; };
 		BDFBDEE11B849AD20048703B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEE01B849AD20048703B /* AppDelegate.m */; };
 		BDFBDEE91B849AD20048703B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFBDEE81B849AD20048703B /* Images.xcassets */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02CBC461499BE474FA3B53F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BD594E181B87107B00F9AC91 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = "Photo Bombers/Podfile"; sourceTree = "<group>"; };
 		BDFBDED81B849AD20048703B /* Photo Bombers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Bombers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFBDEDC1B849AD20048703B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDFBDEDD1B849AD20048703B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,6 +42,8 @@
 		BDFBDF061B849B970048703B /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		BDFBDF081B84AA490048703B /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		BDFBDF091B84AA490048703B /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		C6D0B1C10D168045A9451C4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8581E293E6B39797C598407 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB2AB6E6DC6542D0F3F323E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,12 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40DF1307F432D4C6C7FC09D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02CBC461499BE474FA3B53F4 /* Pods.debug.xcconfig */,
+				D8581E293E6B39797C598407 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BDFBDECF1B849AD20048703B = {
 			isa = PBXGroup;
 			children = (
+				BD594E181B87107B00F9AC91 /* Podfile */,
 				BDFBDEDA1B849AD20048703B /* Photo Bombers */,
 				BDFBDEF41B849AD20048703B /* Photo BombersTests */,
 				BDFBDED91B849AD20048703B /* Products */,
+				40DF1307F432D4C6C7FC09D0 /* Pods */,
+				EB8751EBC24BB656031BEC43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +136,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EB8751EBC24BB656031BEC43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6D0B1C10D168045A9451C4B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDFBDEFB1B849AD20048703B /* Build configuration list for PBXNativeTarget "Photo Bombers" */;
 			buildPhases = (
+				C48156D33D62CDEA733E06F0 /* Check Pods Manifest.lock */,
 				BDFBDED41B849AD20048703B /* Sources */,
 				BDFBDED51B849AD20048703B /* Frameworks */,
 				BDFBDED61B849AD20048703B /* Resources */,
+				63FE40DE15ACD2D6D430BE29 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +238,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63FE40DE15ACD2D6D430BE29 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C48156D33D62CDEA733E06F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDFBDED41B849AD20048703B /* Sources */ = {
@@ -320,6 +381,7 @@
 		};
 		BDFBDEFC1B849AD20048703B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02CBC461499BE474FA3B53F4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Photo Bombers/Info.plist";
@@ -330,6 +392,7 @@
 		};
 		BDFBDEFD1B849AD20048703B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8581E293E6B39797C598407 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Photo Bombers/Info.plist";
@@ -391,6 +454,7 @@
 				BDFBDEFD1B849AD20048703B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDFBDEFE1B849AD20048703B /* Build configuration list for PBXNativeTarget "Photo BombersTests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +463,7 @@
 				BDFBDF001B849AD20048703B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
