@@ -9,8 +9,11 @@
 #import "PhotosViewController.h"
 #import "PhotoCell.h"
 #import <SimpleAuth/SimpleAuth.h>
+#import "DetailViewController.h"
+#import "PresentDetailTransition.h"
+#import "DismissDetailTransition.h"
 
-@interface PhotosViewController ()
+@interface PhotosViewController () <UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) NSString *accessToken;
 @property (strong, nonatomic) NSArray *photos;
@@ -106,7 +109,7 @@
 - (void)refresh {
     NSLog(@"Signed in!");
     NSURLSession *session = [NSURLSession sharedSession];
-    NSString *urlString = [[NSString alloc]initWithFormat:@"https://api.instagram.com/v1/tags/photobomber/media/recent?access_token=%@",self.accessToken];
+    NSString *urlString = [[NSString alloc]initWithFormat:@"https://api.instagram.com/v1/tags/squats/media/recent?access_token=%@",self.accessToken];
     NSURL *url = [[NSURL alloc]initWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
@@ -126,6 +129,39 @@
     }];
     [task resume];
 }
+
+// Método para cuando seleccionamos un ítem del collectionView
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Seleccionamos la foto pulsada
+    NSDictionary *photo = self.photos[indexPath.row];
+    // Instanciamos el viewController para cambiar la propiedad
+    DetailViewController *viewController = [[DetailViewController alloc]init];
+    // Establecemos el modo de presentacion a Custom porque vamos a usar una transicion propia
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    // Le indicamos la transicion a usar
+    viewController.transitioningDelegate = self;
+    
+    // Asignamos la propiedad
+    viewController.photo = photo;
+    
+    // Establecemos qué hacer cuando aparece el viewController con el método presentViewController
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+}
+
+// Dos métodos que sobreescribimos para las animaciones
+
+// El que presenta
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [[PresentDetailTransition alloc] init];
+}
+
+// El que la elimina
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[DismissDetailTransition alloc] init];
+}
+
 
 
 @end

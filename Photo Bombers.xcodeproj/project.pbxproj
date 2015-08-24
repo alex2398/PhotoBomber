@@ -14,6 +14,10 @@
 		BDFBDEF81B849AD20048703B /* Photo_BombersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDEF71B849AD20048703B /* Photo_BombersTests.m */; };
 		BDFBDF071B849B970048703B /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDF061B849B970048703B /* PhotosViewController.m */; };
 		BDFBDF0A1B84AA490048703B /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFBDF091B84AA490048703B /* PhotoCell.m */; };
+		BDFFBB571B8B0764003F7AEC /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFFBB561B8B0764003F7AEC /* PhotoController.m */; };
+		BDFFBB5A1B8B0C23003F7AEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFFBB591B8B0C23003F7AEC /* DetailViewController.m */; };
+		BDFFBB5D1B8B1494003F7AEC /* PresentDetailTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFFBB5C1B8B1494003F7AEC /* PresentDetailTransition.m */; };
+		BDFFBB601B8B1C0C003F7AEC /* DismissDetailTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFFBB5F1B8B1C0C003F7AEC /* DismissDetailTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,14 @@
 		BDFBDF061B849B970048703B /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		BDFBDF081B84AA490048703B /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		BDFBDF091B84AA490048703B /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		BDFFBB551B8B0764003F7AEC /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
+		BDFFBB561B8B0764003F7AEC /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
+		BDFFBB581B8B0C23003F7AEC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BDFFBB591B8B0C23003F7AEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BDFFBB5B1B8B1494003F7AEC /* PresentDetailTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentDetailTransition.h; sourceTree = "<group>"; };
+		BDFFBB5C1B8B1494003F7AEC /* PresentDetailTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentDetailTransition.m; sourceTree = "<group>"; };
+		BDFFBB5E1B8B1C0C003F7AEC /* DismissDetailTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissDetailTransition.h; sourceTree = "<group>"; };
+		BDFFBB5F1B8B1C0C003F7AEC /* DismissDetailTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissDetailTransition.m; sourceTree = "<group>"; };
 		C6D0B1C10D168045A9451C4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8581E293E6B39797C598407 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,8 +112,16 @@
 				BDFBDEE01B849AD20048703B /* AppDelegate.m */,
 				BDFBDF051B849B970048703B /* PhotosViewController.h */,
 				BDFBDF061B849B970048703B /* PhotosViewController.m */,
+				BDFFBB581B8B0C23003F7AEC /* DetailViewController.h */,
+				BDFFBB591B8B0C23003F7AEC /* DetailViewController.m */,
 				BDFBDF081B84AA490048703B /* PhotoCell.h */,
 				BDFBDF091B84AA490048703B /* PhotoCell.m */,
+				BDFFBB5B1B8B1494003F7AEC /* PresentDetailTransition.h */,
+				BDFFBB5C1B8B1494003F7AEC /* PresentDetailTransition.m */,
+				BDFFBB5E1B8B1C0C003F7AEC /* DismissDetailTransition.h */,
+				BDFFBB5F1B8B1C0C003F7AEC /* DismissDetailTransition.m */,
+				BDFFBB551B8B0764003F7AEC /* PhotoController.h */,
+				BDFFBB561B8B0764003F7AEC /* PhotoController.m */,
 				BDFBDEE81B849AD20048703B /* Images.xcassets */,
 				BDFBDEDB1B849AD20048703B /* Supporting Files */,
 			);
@@ -279,6 +299,10 @@
 				BDFBDEE11B849AD20048703B /* AppDelegate.m in Sources */,
 				BDFBDF071B849B970048703B /* PhotosViewController.m in Sources */,
 				BDFBDEDE1B849AD20048703B /* main.m in Sources */,
+				BDFFBB5D1B8B1494003F7AEC /* PresentDetailTransition.m in Sources */,
+				BDFFBB571B8B0764003F7AEC /* PhotoController.m in Sources */,
+				BDFFBB601B8B1C0C003F7AEC /* DismissDetailTransition.m in Sources */,
+				BDFFBB5A1B8B0C23003F7AEC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
